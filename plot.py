@@ -5,12 +5,18 @@ import seaborn as sns
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
+import os
+
 #===============================================================
 # 1. DATA LOADING
 
-exam_df = pd.read_csv('Exam_Score_Prediction.csv')
-wine_df = pd.read_csv('Wine_Quality.csv')
+base_path = os.path.dirname(os.path.abspath(__file__))
 
+exam_path = os.path.join(base_path, 'Exam_Score_Prediction.csv')
+wine_path = os.path.join(base_path, 'Wine_Quality.csv')
+
+exam_df = pd.read_csv(exam_path)
+wine_df = pd.read_csv(wine_path)
 #===============================================================
 # 2. DATA CLEANING & PREPARATION
 
